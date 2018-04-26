@@ -1,27 +1,32 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BookCase from './BookCase'
+import * as BooksAPI from './BooksAPI'
 class SearchBook extends Component {
     
     state = {
-        query: ''
+        query: '',
+        booksFilter: []
     }
     
     updateQuery = (query) => {
-        const { handlerSearchInput, booksSearch } = this.props
-        this.setState({ query: query.trim() })
+        this.setState({ query })
         if (query) {
-            handlerSearchInput(query)
+            BooksAPI.search(query).then(booksFilter => {
+                if (!booksFilter.error) {
+                    this.setState({ booksFilter })
+                } else {
+                    this.setState({ booksFilter: [] })
+                }
+            })  
         }
     }
-    
+
     render(){
-        const { query } = this.state
-        const { handlerSearchInput, booksSearch } = this.props
-        
+        const { query, booksFilter } = this.state
+        const { booksWant, booksCurrently, booksRead, handleCurrently, handleWant, handleRead  } = this.props
         return (
             <div className="search-books">
-                {console.log(booksSearch)}
                 <div className="search-books-bar">
                     <Link className='close-search' to="/"> Close </Link>
                     <div className="search-books-input-wrapper">
@@ -35,7 +40,13 @@ class SearchBook extends Component {
                 </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                        <BookCase title='Result' books={booksSearch} />
+                        <BookCase title='Result' books={booksFilter} 
+                                booksWant={booksWant}
+                                booksCurrently={booksCurrently} 
+                                booksRead={booksRead}
+                                handleCurrently={handleCurrently}
+                                handleWant={handleWant} 
+                                handleRead={handleRead}/>
                     </ol>
                 </div>
             </div>
