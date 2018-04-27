@@ -24,7 +24,7 @@ class SearchBook extends Component {
 
     render(){
         const { query, booksFilter } = this.state
-        const { booksWant, booksCurrently, booksRead, handleCurrently, handleWant, handleRead  } = this.props
+        const { booksWant, booksCurrently, booksRead, handleUpdate } = this.props
         return (
             <div className="search-books">
                 <div className="search-books-bar">
@@ -44,9 +44,7 @@ class SearchBook extends Component {
                                 booksWant={booksWant}
                                 booksCurrently={booksCurrently} 
                                 booksRead={booksRead}
-                                handleCurrently={handleCurrently}
-                                handleWant={handleWant} 
-                                handleRead={handleRead}/>
+                                handleUpdate={handleUpdate} />
                     </ol>
                 </div>
             </div>
