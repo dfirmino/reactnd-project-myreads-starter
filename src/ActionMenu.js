@@ -10,7 +10,7 @@ class ActionMenu extends Component {
                     <option value="currentlyReading" onClick={() => { bindUpdate(bookRef,"currentlyReading") }}> {status === "currentlyReading"  && "✔" } Currently Reading</option>
                     <option value="wantToRead" onClick={() => { bindUpdate(bookRef,"wantToRead") }}> {status === "wantToRead" && "✔"} Want to Read</option>
                     <option value="read" onClick={() => { bindUpdate(bookRef,"read") }}> {status === "read" && "✔"} Read </option>
-                    <option value="none">None</option>
+                    <option value="none" onClick={() => { bindUpdate(bookRef, "none") }}>None</option>
                 </select>
             </div>
         )

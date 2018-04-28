@@ -29,10 +29,7 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route path="/add" render={({ history }) => {
         return ( 
-          <SearchBookPage booksWant={this.state.booksWant}
-                          booksCurrently={this.state.booksCurrently}
-                          booksRead={this.state.booksRead} 
-                          handleUpdate={this.update} /> 
+          <SearchBookPage allBooks={this.state.books} handleUpdate={this.update}/> 
         )
           }}/> 
         

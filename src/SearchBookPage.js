@@ -10,11 +10,19 @@ class SearchBook extends Component {
     }
     
     updateQuery = (query) => {
+        let titleBook = this.props.allBooks.map(b => b.title )
         this.setState({ query })
         if (query) {
             BooksAPI.search(query).then(booksFilter => {
                 if (!booksFilter.error) {
-                    this.setState({ booksFilter })
+                    let booksSearch = booksFilter.map(bookFilter => {
+                        if (titleBook.indexOf(bookFilter.title) > 0){
+                            let indice = titleBook.indexOf(bookFilter.title)
+                            bookFilter.shelf = this.props.allBooks[indice].shelf
+                       }
+                       return bookFilter
+                   }) 
+                    this.setState({ booksFilter: booksSearch })
                 } else {
                     this.setState({ booksFilter: [] })
                 }
@@ -24,7 +32,7 @@ class SearchBook extends Component {
 
     render(){
         const { query, booksFilter } = this.state
-        const { booksWant, booksCurrently, booksRead, handleUpdate } = this.props
+        const { allBooks, handleUpdate } = this.props
         return (
             <div className="search-books">
                 <div className="search-books-bar">
@@ -40,11 +48,7 @@ class SearchBook extends Component {
                 </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                        <BookCase title='Result' books={booksFilter} 
-                                booksWant={booksWant}
-                                booksCurrently={booksCurrently} 
-                                booksRead={booksRead}
-                                handleUpdate={handleUpdate} />
+                        <BookCase title='Result' books={booksFilter} handleUpdate={handleUpdate}  />
                     </ol>
                 </div>
             </div>
