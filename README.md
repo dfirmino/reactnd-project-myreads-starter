@@ -1,4 +1,4 @@
-![React](http://www.jsweet.org/wp-content/uploads/2016/04/react-logo-300x289.png "React")
+![React](https://logos-download.com/wp-content/uploads/2016/09/React_logo_small.png "React")
 # MyReads Project
 
   Desenvolvido para o projeto nanodegree de formação em React Realizado Pela [Udacity](https://br.udacity.com/course/react-nanodegree--nd019) 
