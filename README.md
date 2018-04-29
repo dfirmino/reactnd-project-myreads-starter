@@ -1,6 +1,6 @@
 # MyReads Project
 
-Projeto Desenvolvido para o projeto nanodegree de formação em React Realizado Pela [Udacity](https://br.udacity.com/course/react-nanodegree--nd019) 
+  Desenvolvido para o projeto nanodegree de formação em React Realizado Pela [Udacity](https://br.udacity.com/course/react-nanodegree--nd019) 
 
 ## Instalação do Projeto
 
