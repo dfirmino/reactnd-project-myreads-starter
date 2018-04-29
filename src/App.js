@@ -28,7 +28,7 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        <Route path="/add" render={({ history }) => {
+        <Route path="/search" render={({ history }) => {
         return ( 
           <SearchBookPage allBooks={this.state.books} handleUpdate={this.update}/> 
         )

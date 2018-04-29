@@ -14,7 +14,7 @@ class BookCase extends Component {
                                 <div className="book">
                                     <div className="book-top">
                                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks && book.imageLinks.smallThumbnail})`}}></div>
-                                        <ActionMenu status={book.shelf} bookRef={book} 
+                                        <ActionMenu bookRef={book} 
                                             bindUpdate={handleUpdate} />
                                     </div>
                                     <div className="book-title">{ book.title }</div>

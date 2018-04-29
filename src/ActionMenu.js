@@ -5,7 +5,7 @@ class ActionMenu extends Component {
         bookRef: this.props.bookRef
     }
     render() {
-        const { status, bindUpdate} =  this.props
+        const { bindUpdate } =  this.props
         const { bookRef } =  this.state
         return (
             <div className="book-shelf-changer">
@@ -14,7 +14,7 @@ class ActionMenu extends Component {
                     <option value="currentlyReading"> {bookRef.shelf === "currentlyReading"  && "✔" } Currently Reading</option>
                     <option value="wantToRead"> {bookRef.shelf === "wantToRead" && "✔"} Want to Read</option>
                     <option value="read"> {bookRef.shelf === "read" && "✔"} Read </option>
-                    <option value="none">  None</option>
+                    <option value="none"> { (!bookRef.shelf || bookRef.shelf === "none")  && "✔"} None</option>
                 </select>
             </div>
         )
