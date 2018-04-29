@@ -8,7 +8,7 @@
 * Instale as Dependências `npm install`
 * Rode o Servidor  `npm start`
 
-## What You're Getting
+## O Que Vou Encontrar
 ```bash
 ├── CONTRIBUTING.md
 ├── README.md - Esse Arquivo.
@@ -34,5 +34,4 @@
     └── index.js # Arquivo utilizado para a renderização DOM.
 ```
 
-## Backend Server
-
+![React](https://victorvhpg.github.io/minicurso-react.js/slides/img/logo.png "React")
