@@ -48,7 +48,7 @@ class SearchBook extends Component {
                 </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                        <BookCase title='Result' books={booksFilter} handleUpdate={handleUpdate}  />
+                        <BookCase books={booksFilter} handleUpdate={handleUpdate}  />
                     </ol>
                 </div>
             </div>
